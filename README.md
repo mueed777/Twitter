@@ -26,6 +26,10 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 035a731a26b9e840927a0414bbf7406c49704f86
 # Twitter - Part II
 
 This is a basic twitter app to view, compose, favorite, and retweet tweets.
@@ -51,3 +55,8 @@ The following **bonus** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 035a731a26b9e840927a0414bbf7406c49704f86
