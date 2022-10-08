@@ -2,7 +2,6 @@
 //  HomeTableViewController.swift
 //  Twitter
 //
-//  Created by Abdul Hassan on 10/2/22.
 //  Copyright © 2022 Dan. All rights reserved.
 //
 
@@ -19,11 +18,19 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // load tweets
-        loadTweets()
+//        loadTweets()
         
         // refresh page
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
+//        self.loadTweets()
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 150
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadTweets()
     }
     
     @objc func loadTweets(){
@@ -43,7 +50,8 @@ class HomeTableViewController: UITableViewController {
             self.myRefreshControl.endRefreshing()
             
         }, failure: { Error in
-            print("Could nto retreive tweets!")
+            print("Could not retreive tweets!")
+//            print(Error.localizedDescription)
         })
         
     }
@@ -64,7 +72,7 @@ class HomeTableViewController: UITableViewController {
             self.myRefreshControl.endRefreshing()
             
         }, failure: { Error in
-            print("Could nto retreive tweets!")
+            print("Could not retreive tweets!")
         })
         
     }
@@ -110,6 +118,9 @@ class HomeTableViewController: UITableViewController {
             cell.profileImageView.image = UIImage(data: imageData)
         }
         
+        cell.setFavorited(tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.tweetID = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         return cell
     }
 }
